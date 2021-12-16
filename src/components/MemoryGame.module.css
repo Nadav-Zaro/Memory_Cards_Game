@@ -1,0 +1,172 @@
+.memoryGame{
+    text-align: center;
+    position: relative;
+    font-weight: 600;
+    font-size: larger;
+    font-family:'Arial, Helvetica, sans-serif';
+    color: rgb(216, 6, 6);
+    width: 100%;
+    height: 100vh;
+}
+
+.game{
+    margin-top: 1.7%;
+    letter-spacing: 1.5px
+}
+
+.background{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: brightness(.65);
+    filter: blur(2.5px);
+    z-index:-2;
+}
+
+.cardsHolder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 75%;
+    margin-left: 15%;
+    height: 68.6vh;
+    padding: 8px;
+}
+
+.cards{
+    height: 22.2vh;
+    width: 22.5%;
+    padding: 5px;
+    border: 4px solid black;
+    background: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/06cb28af-a15c-45d3-b1b6-fcbc1910e0c3/dbwk3sn-1ad1083a-5b15-4f77-af59-66dc07024a73.jpg/v1/fill/w_739,h_1081,q_70,strp/back_card_yugioh_hd_by_carlos123321_dbwk3sn-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQ5NiIsInBhdGgiOiJcL2ZcLzA2Y2IyOGFmLWExNWMtNDVkMy1iMWI2LWZjYmMxOTEwZTBjM1wvZGJ3azNzbi0xYWQxMDgzYS01YjE1LTRmNzctYWY1OS02NmRjMDcwMjRhNzMuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.hzaBSJ4Hs23sjOCzVznIn1Qjgx2-c0BY__I1E7-rQKg");
+    background-size: 100% 100%;
+    transition: 1s;
+    filter: drop-shadow(2px 2px 3px white);
+    border-radius: 12px;
+}
+
+.cards:hover{
+    transform: scale(1.05);
+    border: 4px solid rgb(117, 35, 185);
+}
+
+.btn{
+    margin-top: -2%;
+    border: 2px solid rgb(216, 6, 6);
+    background-color: black;
+    padding: 6px;
+    font-size: 25px;
+    font-weight: 600;
+    color: rgb(216, 6, 6);
+    border-radius: 10px;
+    margin-left: 1%;
+    height:55px;
+    width: 13%;
+    transition: .3s;
+    letter-spacing: 1px;
+    filter: drop-shadow(2px 2px 3px white);
+}
+
+.btn:hover{
+    transform: scale(1.02);
+    color: rgb(117, 35, 185);
+    border: 2px solid rgb(117, 35, 185);
+    filter: drop-shadow(2px 2px 5px white);
+}
+
+.timeAndMoves{
+    position: fixed;
+    top: 5%;
+    left: 1%;
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+    height: 25%;
+    color: white;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.timeAndMoves:hover{
+    transform: scale(1.02);
+    font-family:"cursive";
+}
+
+.timeAndMoves p{
+    border: 3px inset rgb(216, 6, 6);
+    color: rgb(216, 6, 6);
+    margin-top: 0%;
+    font-size: larger;
+    font-weight: 800;
+    border-radius: 50%;
+    padding: 18px;
+    width: 33%;
+    height: 30%;
+    text-align: center;
+    transition: .4s;
+    font-family:"cursive";
+}
+
+.timeAndMoves p:hover{
+    border: 3px inset rgb(117, 35, 185);
+    color: rgb(117, 35, 185);
+    filter: drop-shadow(2px 2px 5px white);
+}
+
+.scoreIcon{
+    margin-left: 10%;
+    width: 35%;
+    height: 35%;
+    filter: drop-shadow(2px 2px 2px rgb(117, 35, 185));
+}
+.gameOverDiv{
+    font-size: larger;
+    top: 30%;
+    left: 38%;
+    height: 30vh;
+    width: 22%;
+    border-radius: 15px;
+    border: 2px solid rgb(216, 6, 6);
+    position: absolute;
+    background-color: rgb(19, 16, 16);
+}
+.scoreBoard{
+    position: fixed;
+    font-size: larger;
+    top: 8%;
+    width: 50%;
+    left: 25%;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: black;
+    transition: .5s;
+    z-index: 1;
+ }
+ 
+ .scoreBoard:hover{
+    border: 2px solid rgb(117, 35, 185);
+    filter: drop-shadow(3px 3px 6px white);
+ }
+.table{
+    width: 98.7%;
+    margin-left: 0.6%;
+    overflow: scroll;
+}
+.td{
+    border-right: 1.2px solid white;
+}
+
+.tr:hover{
+    transform: scale(1.01);
+    outline:1px inset gold;
+}
+.exit{
+    position: fixed;
+    font-size: larger;
+    height: 15px;
+    width: 15px;
+    top: 11%;
+    left: 73.8%;
+    z-index: 1;
+}

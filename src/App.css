@@ -1,0 +1,51 @@
+.openGameImg{
+  width: 99%;
+  height: 99.5vh;
+  filter: brightness(.6);
+}
+.openGameBtn{
+  position: absolute;
+  padding: 10px;
+  height: 14vh;
+  width: 18vw;
+  font-size: 38px;
+  background-color: black;
+  border-radius: 20px;
+  border: 3px inset goldenrod;
+  color: goldenrod;
+  left: 42%;
+  top: 45%;
+  transition: .6s;
+}
+
+.openGameBtn:hover{
+  transform: scale(1.05);
+  border: 3px inset rgb(117, 35, 185);
+  filter: drop-shadow(-3px 3px 4px white);
+  color: rgb(117, 35, 185);
+}
+
+.h1{
+  position: absolute;
+  left: 42%;
+  top: 5%;
+  font-family: cursive;
+  font-size: 65px;
+  z-index: 1;
+  color: white;
+}
+
+.h3{
+  position: absolute;
+  left: 40%;
+  top: 25%;
+  font-family: cursive;
+  font-size: 35px;
+  z-index: 1;
+  color: white;
+}
+
+.hiddenStart{ 
+  transition: 4s;
+  display: none;
+}
