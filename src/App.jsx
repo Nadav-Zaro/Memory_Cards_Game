@@ -6,7 +6,7 @@ function App() {
   const [openGame, setOpenGame] = useState(false)
   return (
     <div className="App">
-      <img className={!openGame?"openGameImg":"hiddenStart"} src="http://static.minitokyo.net/downloads/03/12/30603.jpg"/>
+      <img className={!openGame?"openGameImg":"hiddenStart"} src="https://i.ibb.co/c2q10YY/openimg-optimized.jpg"/>
       <h1 className={!openGame?"h1":"hiddenStart"}>Yu Gi Oh</h1>
       <h3 className={!openGame?"h3":"hiddenStart"}>Memory Cards Game</h3>
       <button className={!openGame?"openGameBtn":"hiddenStart"} onClick={()=>setOpenGame(true)}>Let's Play!</button>

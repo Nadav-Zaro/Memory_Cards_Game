@@ -1,7 +1,7 @@
 import { Component } from 'react'
 import Cards from './Cards'
 import Message from './Message'
-// import ScoreBoard from './ScoreBoard'
+import moment from 'moment'
 import * as style from './MemoryGame.module.css'
 
 export default class MemoryGame extends Component {
@@ -12,7 +12,7 @@ export default class MemoryGame extends Component {
     secondCard = null 
     firstFlip = null
     secondFlip = null
-    cardBack = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/06cb28af-a15c-45d3-b1b6-fcbc1910e0c3/dbwk3sn-1ad1083a-5b15-4f77-af59-66dc07024a73.jpg/v1/fill/w_739,h_1081,q_70,strp/back_card_yugioh_hd_by_carlos123321_dbwk3sn-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQ5NiIsInBhdGgiOiJcL2ZcLzA2Y2IyOGFmLWExNWMtNDVkMy1iMWI2LWZjYmMxOTEwZTBjM1wvZGJ3azNzbi0xYWQxMDgzYS01YjE1LTRmNzctYWY1OS02NmRjMDcwMjRhNzMuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.hzaBSJ4Hs23sjOCzVznIn1Qjgx2-c0BY__I1E7-rQKg"
+    cardBack = "https://i.ibb.co/18KZH6C/cardback-optimized.jpg"
     cardsToCompare = []
     componentDidMount(){
        this.stopTimer()
@@ -31,18 +31,18 @@ export default class MemoryGame extends Component {
     }
     shuffleCards=()=>{
         let cardsArr =[
-            {id:1,img:"https://images.saymedia-content.com/.image/t_share/MTc0NDYwODEwMDEyNDY4ODcw/top-10-cards-you-need-for-your-exodia-yu-gi-oh-deck.png",click:false},
-            {id:1,img:"https://images.saymedia-content.com/.image/t_share/MTc0NDYwODEwMDEyNDY4ODcw/top-10-cards-you-need-for-your-exodia-yu-gi-oh-deck.png",click:false},
-            {id:2,img:"https://static2.cards-capital.com/4285/dragon-de-metal-noir-aux-yeux-rouges.jpg",click:false},
-            {id:2,img:"https://static2.cards-capital.com/4285/dragon-de-metal-noir-aux-yeux-rouges.jpg",click:false},
-            {id:3,img:"https://i.pinimg.com/736x/b7/d4/a7/b7d4a70799a49090539688f7ef78a81c--jed-yo-gi-oh.jpg",click:false},
-            {id:3,img:"https://i.pinimg.com/736x/b7/d4/a7/b7d4a70799a49090539688f7ef78a81c--jed-yo-gi-oh.jpg",click:false},
-            {id:4,img:"https://www.sell2bbnovelties.com/mm5/yugioh/YU_BPT005.jpg",click:false},
-            {id:4,img:"https://www.sell2bbnovelties.com/mm5/yugioh/YU_BPT005.jpg",click:false},
-            {id:5,img:"https://www.yu-gi-wang.nl/shops/tradingcardsshop/twin-headed-behemoth-ss02-ena06-common-1st-edi-twi.jpg",click:false},
-            {id:5,img:"https://www.yu-gi-wang.nl/shops/tradingcardsshop/twin-headed-behemoth-ss02-ena06-common-1st-edi-twi.jpg",click:false},
-            {id:6,img:"https://www.duelshop.com.br/15010-large_default/destiny-hero-plasma-lehd-ena02-common.jpg",click:false},
-            {id:6,img:"https://www.duelshop.com.br/15010-large_default/destiny-hero-plasma-lehd-ena02-common.jpg",click:false},
+            {id:1,img:"https://i.ibb.co/cNhkhzr/card3-optimized.jpg",click:false},
+            {id:1,img:"https://i.ibb.co/cNhkhzr/card3-optimized.jpg",click:false},
+            {id:2,img:"https://i.ibb.co/HYSsftr/card2-optimized.jpg",click:false},
+            {id:2,img:"https://i.ibb.co/HYSsftr/card2-optimized.jpg",click:false},
+            {id:3,img:"https://i.ibb.co/q5gRG5n/card6-optimized.jpg",click:false},
+            {id:3,img:"https://i.ibb.co/q5gRG5n/card6-optimized.jpg",click:false},
+            {id:4,img:"https://i.ibb.co/WKqCj92/card1.png",click:false},
+            {id:4,img:"https://i.ibb.co/WKqCj92/card1.png",click:false},
+            {id:5,img:"https://i.ibb.co/JrLLj4S/card4-optimized.jpg",click:false},
+            {id:5,img:"https://i.ibb.co/JrLLj4S/card4-optimized.jpg",click:false},
+            {id:6,img:"https://i.ibb.co/8jRLtjC/card5-optimized.jpg",click:false},
+            {id:6,img:"https://i.ibb.co/8jRLtjC/card5-optimized.jpg",click:false},
         ]
         cardsArr.sort(()=>Math.random() - .5)
         this.setState({cards:cardsArr})
@@ -93,8 +93,8 @@ export default class MemoryGame extends Component {
         temp.push({
             seconds,
             moves,
-            date: (date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear()),
-            hour: (date.getHours() + "." + date.getMinutes() + "." + date.getSeconds())
+            date: moment().format("DD/MM/YYYY"),
+            hour: moment().format("HH:mm:ss")
         })
         this.setState({scoreBoard:temp})
         localStorage.setItem(this.SCORE_BOARD_KEY,JSON.stringify(temp))
@@ -160,21 +160,21 @@ export default class MemoryGame extends Component {
                    <div className={style.scoreBoard}>
                     <h1>Score Board</h1>
                     <table className={style.table}>
-                    <tbody className={style.tbody}>
+                    <tbody>
                         <tr>
-                            <th className={style.th}>No.</th>
-                            <th className={style.th}>Seconds</th>
-                            <th className={style.th}>Moves</th>
-                            <th className={style.th}>Date</th>
-                            <th className={style.th}>Hour</th>
+                            <th>No.</th>
+                            <th>Seconds</th>
+                            <th>Moves</th>
+                            <th>Date</th>
+                            <th>Hour</th>
                         </tr>
                         {scoreBoard.map((it,i)=>(
-                        <tr className={style.tr} key={i}>
-                            <td className={style.td}>{i}</td>
-                            <td className={style.td}>{it.seconds}</td>
-                            <td className={style.td}>{it.moves}</td>
-                            <td className={style.td}>{it.date}</td>
-                            <td className={style.td}>{it.hour}</td>
+                        <tr key={i}>
+                            <td>{i}</td>
+                            <td>{it.seconds}</td>
+                            <td>{it.moves}</td>
+                            <td>{it.date}</td>
+                            <td>{it.hour}</td>
                         </tr>
                         ))}
                    </tbody>
@@ -186,14 +186,11 @@ export default class MemoryGame extends Component {
         const gameOverMessage = (gameOver? <div className={style.gameOverDiv}><h1>Game Over</h1><h4>Seconds: {gameSeconds} sec</h4><h4>Moves: {gameMoves} </h4></div>:"")
         return (
             <div className={style.memoryGame}>
-                <img className={style.background} src="https://wallpapercave.com/wp/wp2279298.jpg"/>
+                <img className={style.background} src="https://i.ibb.co/RSZLdhB/background-optimized.jpg"/>
                 <span style={{fontSize:"40px",fontFamily:"cursive",textShadow:"2px 1px 2px white"}}>Yu Gi Oh</span><br/>
-                <span style={{fontSize:"25px",fontFamily:"cursive",textShadow:"1px 1px 2px white"}}>Memory Game</span>
                 <div className={style.game}>
                 <button className={style.btn} onClick={()=>{this.startGame();this.setState({stopGame:false})}}>New Game</button>
-                {stopGame?<button className={style.btn} onClick={()=>{this.setState({stopGame:false});this.resumeGame()}}>Resume Game</button> : <button className={style.btn} onClick={()=>{this.setState({stopGame:true});this.stopTimer()}}>Pause Game</button>}
-                {/* <button className={style.btn} onClick={()=>{this.setState({stopGame:true});this.stopTimer()}}>Pause Game</button>
-                <button disabled={this.timeHandler != null ? true : false} className={style.btn} onClick={()=>{this.setState({stopGame:false});this.resumeGame()}}>Resume Game</button> */}
+                {stopGame?<button className={style.btn} onClick={()=>{this.setState({stopGame:false});this.resumeGame()}}>Resume</button> : <button className={style.btn} onClick={()=>{this.setState({stopGame:true});this.stopTimer()}}>Pause</button>}
                 <Message gameSeconds={gameSeconds} gameMoves={gameMoves}/>
                 <div className={style.cardsHolder}>
                 {cardElemnt}
@@ -201,7 +198,7 @@ export default class MemoryGame extends Component {
                 </div>
                 {scoreBoardHistory()}<br/>
                 {click? <img className={style.exit} onClick={()=>this.setState({click:false})} src="https://img.icons8.com/ios-glyphs/30/ffffff/multiply.png"/>:""}
-                <button className={style.btn} onClick={()=>{this.setState({scoreBoard:this.getScoreBoard(),click:true});scoreBoardHistory()}}>Score Board</button>
+                <button className={style.btn} onClick={()=>{this.setState({scoreBoard:this.getScoreBoard(),click:true});scoreBoardHistory()}}>Score</button>
                 </div>
             </div>
         )

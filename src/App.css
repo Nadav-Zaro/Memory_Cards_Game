@@ -14,7 +14,7 @@
   border: 3px inset goldenrod;
   color: goldenrod;
   left: 42%;
-  top: 45%;
+  top: 50%;
   transition: .6s;
 }
 
@@ -27,25 +27,49 @@
 
 .h1{
   position: absolute;
-  left: 42%;
+  left: 40%;
   top: 5%;
   font-family: cursive;
-  font-size: 65px;
+  font-size: 5em;
   z-index: 1;
-  color: white;
+  color: purple;
+  filter: drop-shadow(1.5px 1.5px 1px rgba(255, 255, 255, 0.685));
+  background-color: rgba(0, 0, 0, 0.781);
+  border-radius: 7px;
 }
 
 .h3{
   position: absolute;
-  left: 40%;
+  left: 35%;
   top: 25%;
   font-family: cursive;
-  font-size: 35px;
+  font-size: 3em;
   z-index: 1;
-  color: white;
+  color: purple;
+  filter: drop-shadow(1.5px 1.5px 1px rgba(255, 255, 255, 0.685));
+  background-color: rgba(0, 0, 0, 0.781);
+  border-radius: 7px;
 }
 
 .hiddenStart{ 
   transition: 4s;
   display: none;
+}
+
+@media screen and (max-width:1024px){
+  .h1{left: 35%;}
+  .h3{left: 30%;}
+  .openGameBtn{width: 20%;}
+}
+
+@media screen and (max-width:768px){
+  .h1{left: 30%;}
+  .h3{left: 20%;}
+  .openGameBtn{width: 30%;left: 35%;}
+}
+
+@media screen and (max-width:425px){
+  .h1{font-size: 3em;left: 25%;}
+  .h3{font-size: 1.8em;left: 15%;}
+  .openGameBtn{width: 30%;}
 }
