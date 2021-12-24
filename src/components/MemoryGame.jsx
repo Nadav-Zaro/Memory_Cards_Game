@@ -183,7 +183,7 @@ export default class MemoryGame extends Component {
         )
             }}
 
-        const gameOverMessage = (gameOver? <div className={style.gameOverDiv}><h1>Game Over</h1><h4>Seconds: {gameSeconds} sec</h4><h4>Moves: {gameMoves} </h4></div>:"")
+        const gameOverMessage = (!gameOver? <div className={style.gameOverDiv}><h1>Game Over</h1><h4>Seconds: {gameSeconds} sec</h4><h4>Moves: {gameMoves} </h4></div>:"")
         return (
             <div className={style.memoryGame}>
                 <img className={style.background} src="https://i.ibb.co/RSZLdhB/background-optimized.jpg"/>
