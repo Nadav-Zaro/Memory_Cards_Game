@@ -89,7 +89,6 @@ export default class MemoryGame extends Component {
     
     addToScoreBoard=(seconds,moves)=>{
         let temp = this.getScoreBoard()
-        const date = new Date();
         temp.push({
             seconds,
             moves,
@@ -128,14 +127,16 @@ export default class MemoryGame extends Component {
                 if (this.firstCard == null ) {
                     this.firstCard = temp[i]
                     this.firstFlip = e.target
+                    console.log(this.firstCard,this.firstFlip);
                     firstFlpstyle(this.firstFlip,this.firstCard.img)
                     return
                 }
                 else if (this.secondCard == null ) {
                     this.secondCard = temp[i]
                     this.secondFlip = e.target
+                    console.log(this.secondCard,this.secondFlip);
                     firstFlpstyle(this.secondFlip,this.secondCard.img)
-                    if (this.firstCard.id === this.secondCard.id) {
+                    if (this.firstCard.id === this.secondCard.id  && this.firstFlip != this.secondFlip) {
                         this.cardsToCompare.push(this.firstFlip.style,this.secondFlip.style)
                         this.setState({gameMoves:this.state.gameMoves + 1})
                         this.firstCard=null;this.secondCard=null;
@@ -170,7 +171,7 @@ export default class MemoryGame extends Component {
                         </tr>
                         {scoreBoard.map((it,i)=>(
                         <tr key={i}>
-                            <td>{i}</td>
+                            <td>{i+1}</td>
                             <td>{it.seconds}</td>
                             <td>{it.moves}</td>
                             <td>{it.date}</td>
